@@ -21,12 +21,12 @@ The outside extremity of contour springs are fixed to the trampoline frame.
 
 
 \comEC{Fig model}
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.5\linewidth]{figures/Model_Final_2.png}
-% \caption{Trampoline model with 15 point of mass $m_{1-15}$ and 38 springs of stiffness constant $k_{1-38}$.}
-% \label{fig:Model_Toile}
-% \end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\linewidth]{figures/Model_Toile.png}
+\caption{Trampoline model with 15 point of mass $m_{1-15}$ and 38 springs of stiffness constant $k_{1-38}$ and relaxed dimension ${\ell}^{relaxed}_{1-38}$.}
+\label{fig:Model_Toile}
+\end{figure}
 
 
 \subsection{Determination of the trampoline force}\label{subsec:2c}
@@ -38,7 +38,7 @@ It could be calculated with the following equation:
 F = \sum_{j=1}^{nb_{mass}=15} ( \sum_{h=1}^{nb_{adj}=4} k_h {(\ell_h - {\ell}^{relaxed}_h)} - m_j \mvec{g}p_{j_z}) ~ \frac{m_{avatar}}{m_{trampoline} + m_{avatar} }  \label{eq:Force_trampo}
 \]
 
-\noindent where ${k_h}$ the stiffness coefficient of the $h^{th}$ spring on the $j^{th}$ mass, $\ell_h$ the dimension of the $h^{th}$ spring on the $j^{th}$ mass, ${\ell}^{relaxed}_h$ the relaxed position of the $h^{th}$ spring on the $j^{th}$ mass, $m_j$ the mass of the $j^{th}$ mass-point,  $\mvec{g}$ the gravity vector and $p_{j_z}$ the z component of the $j^{th}$ mass-point position.
+\noindent where ${k_h}$ the stiffness coefficient of the $h^{th}$ spring on the $j^{th}$ mass, $\ell_h$ the dimension of the $h^{th}$ spring on the $j^{th}$ mass, ${\ell}^{relaxed}_h$ the relaxed dimension of the $h^{th}$ spring on the $j^{th}$ mass, $m_j$ the mass of the $j^{th}$ mass-point,  $\mvec{g}$ the gravity vector and $p_{j_z}$ the z component of the $j^{th}$ mass-point position.
 The constants in this equation are presented in Fig.~\ref{fig:Model_Toile}.
 It also depends on variables which are the positions of the mass-points $\underline{\mvec{p}}$.
 The deformation of the trampoline model was determined by static optimization.
@@ -79,7 +79,7 @@ The objective was of the following form:
 \mathcal{J} = \alpha_1~(h_{CoM} \big\rvert_{t = t_3 \cup t_6}) + \alpha_2~(h_{bed} \big\rvert_{t = t_1 \cup t_4}) + \alpha_3~((\phi - \phi^*) \big\rvert_{t = t_3 \cup t_6}) + \alpha_4~\sum_{i=1}^{nb_{\tau}} \int_0^T \tau_{i}^2 dt + \alpha_5~\sum_{i=1}^{nb_{\tau}}  \int_0^T \dot{\tau_{i}}^2 dt \label{eq:ocp}
 \]
 
-\noindent where $\alpha_\cdot$ are the weighting coefficients listed in Table~\ref{Tab:weighting}, $h_{bed}$ is the bed depression, $\phi$ is the somersault rotation and $\phi^*$ is the targeted somersault rotation, T is the duration of the whole movement, $t_{\cdot}$ are the end time of the phases and $\tau_i$ is the torque actuation of the $i^{th}$ DoF.
+\noindent where $\alpha_\bullet$ are the weighting coefficients listed in Table~\ref{Tab:weighting}, $h_{bed}$ is the bed depression, $\phi$ is the somersault rotation and $\phi^*$ is the targeted somersault rotation, T is the duration of the whole movement, $t_{\bullet}$ are the end time of the phases and $\tau_i$ is the torque actuation of the $i^{th}$ DoF.
 \comEC{C'est wak d'écrire torque derivative comme ca :/}
 
 
@@ -106,13 +106,13 @@ Constraints were also added to make sure the task is executed in realistic condi
 \label{Tab:weighting}
 \end{center}
 
-\comEC{Figure pour illustrer les phases + objectifs associés + contraintes + phase transition ($T = t_1 + t_2 + t_3 + t_4 + t_5$)}
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.5\linewidth]{figures/Model_phases.png}
-% \caption{Illustaration of the separation of the OCP in 6 phases.}
-% \label{fig:Model_phases}
-% \end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{figures/Model_phases.png}
+\caption{Illustaration of the separation of the OCP in 6 phases and the constraints associated with the position of the avatar : in contact with the trampoline, in free fall or at the bed surface.}
+\label{fig:Model_phases}
+\end{figure}
 
 
 \subsection{Multi-start approach}\label{subsec:2f}
