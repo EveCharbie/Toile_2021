@@ -6,7 +6,7 @@
 \documentclass[preprint,12pt]{elsarticle}  % Comment this line out if you need a4paper
 
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath, mleftright}
 \usepackage{bm}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -41,6 +41,9 @@
 \usepackage{gensymb}
 \usepackage{color}
 \usepackage{comment}
+\usepackage{xparse}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
 \newcommand{\comFB}[1]{~\linebreak\noindent\colorbox{yellow}{\parbox{\dimexpr\columnwidth-1\fboxsep}{[FB: #1]}}}
 \newcommand{\comEC}[1]{~\linebreak\noindent\colorbox{green}{\parbox{\dimexpr\columnwidth-1\fboxsep}{[EC: #1]}}}
 \newcommand{\comTEMPO}[1]{~\linebreak\noindent\colorbox{gray}{\parbox{\dimexpr\columnwidth-1\fboxsep}{[#1]}}}
@@ -57,12 +60,13 @@
 \newcommand{\q}{\mvec{q}}
 \newcommand{\dq}{\dmvec{q}}
 \newcommand{\ddq}{\ddmvec{q}} 
+
+
 \title{\LARGE \bf
-Optimal Control as a Tool for Innovation in Aerial Twisting on Trampoline
+Optimal Propulsion Techniques to Generate Non-Twisting Somersaults on Trampoline.
 }
-\author{Eve Charbonneau\textsuperscript{a,*}, François Bailly\textsuperscript{a}, Loane Danès\textsuperscript{b} and Mickaël Begon\textsuperscript{a}% <-this % stops a space
+\author{Eve Charbonneau\textsuperscript{a,*}, François Bailly\textsuperscript{a} and Mickaël Begon\textsuperscript{a}% <-this % stops a space
 \thanks{\textsuperscript{a}\,Laboratoire de Simulation et Modélisation du Mouvement, Faculté de Médecine, Université de Montréal, Laval, QC, Canada}%
-\thanks{\textsuperscript{b}\,AgroParisTech, Paris, France}%
 \thanks{\textsuperscript{*}\,eve.charbonneau.1@umontreal.ca}
 }
 
