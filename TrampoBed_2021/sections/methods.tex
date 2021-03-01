@@ -20,11 +20,10 @@ The model of the trampoline is composed of 15 mass-points and 38 ideal springs w
 The outside extremity of contour springs are fixed to the trampoline frame.
 
 
-\comEC{Fig model}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\linewidth]{figures/Model_Toile.png}
-\caption{Trampoline model with 15 point of mass $m_{1-15}$ and 38 springs of stiffness constant $k_{1-38}$ and relaxed dimension ${\ell}^{relaxed}_{1-38}$.}
+\caption{Top view of the trampoline model with 15 point of mass $m_{1-15}$ and 38 springs of stiffness constant $k_{1-38}$ and relaxed dimension ${\ell}^{relaxed}_{1-38}$.}
 \label{fig:Model_Toile}
 \end{figure}
 
@@ -86,7 +85,7 @@ The objective was of the following form:
 Constraints were also added to make sure the task is executed in realistic conditions: 
 \begin{itemize}
 \item During the contact phases, the feet are attached to the center of the trampoline ($\tau_{1-2} = F(\underline{q})$).
-\item Contact phases start and end when the feet pass ground level ($q_1 = 0$)
+\item Contact phases start and end when the feet pass ground level ($q_2 = 0$)
 \item The range of motion, the velocity and the torques actuation of the joints are bounded to physiological values
 \item ...
 \end{itemize}
@@ -109,7 +108,7 @@ Constraints were also added to make sure the task is executed in realistic condi
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\linewidth]{figures/Model_phases.png}
+\includegraphics[width=\linewidth]{figures/Model_phases.png}
 \caption{Illustaration of the separation of the OCP in 6 phases and the constraints associated with the position of the avatar : in contact with the trampoline, in free fall or at the bed surface.}
 \label{fig:Model_phases}
 \end{figure}
